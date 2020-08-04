@@ -13,7 +13,6 @@
 
 
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
 

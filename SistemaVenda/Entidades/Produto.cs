@@ -15,7 +15,7 @@ namespace SistemaVenda.Entidades
         public double Quantidade { get; set; }
         public decimal Valor { get; set; }
 
-        [ForeignKey("Cetegoria")]
+        [ForeignKey("Categoria")]
         public int CodigoCategoria { get; set; }
         public Categoria Categoria { get; set; }
         public ICollection<VendaProdutos> Vendas { get; set; }

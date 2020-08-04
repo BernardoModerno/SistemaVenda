@@ -11,10 +11,14 @@ namespace SistemaVenda.Entidades
     {
         [Key]
         public int? Codigo { get; set; }
+
         public DateTime Data { get; set; }
+
         [ForeignKey("Cliente")]
         public int CodigoCliente { get; set; }
+
         public Cliente Cliente { get; set; }
+
         public decimal Total { get; set; }
 
     }
