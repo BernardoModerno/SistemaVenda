@@ -21,5 +21,7 @@ namespace SistemaVenda.Entidades
 
         public decimal Total { get; set; }
 
+        public ICollection<VendaProdutos> Produtos { get; set; }
+
     }
 }

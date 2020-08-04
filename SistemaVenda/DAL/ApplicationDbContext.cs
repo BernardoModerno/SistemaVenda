@@ -16,5 +16,22 @@ namespace SistemaVenda.DAL
         public DbSet<Venda> Venda { get; set; }
         public DbSet<VendaProdutos> VendaProdutos { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<VendaProdutos>().HasKey(x => new { x.CodigoVenda, x.CodigoProduto });
+
+            builder.Entity<VendaProdutos>()
+                .HasOne(x => x.Venda)
+                .WithMany(y => y.Produtos)
+                .HasForeignKey(x => x.CodigoVenda);
+
+            builder.Entity<VendaProdutos>()
+                .HasOne(x => x.Produto)
+                .WithMany(y => y.Vendas)
+                .HasForeignKey(x => x.CodigoProduto);
+        }
+
     }
 }
