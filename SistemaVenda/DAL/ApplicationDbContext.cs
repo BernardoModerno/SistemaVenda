@@ -9,6 +9,10 @@ namespace SistemaVenda.DAL
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Produto> Produto{ get; set; }
         public DbSet<Usuario> Usuario { get; set; }
