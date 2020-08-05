@@ -20,8 +20,18 @@ namespace SistemaVenda.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Categoria> lista = Repositorio.Categoria.ToList();
-            return View(lista);
+            Categoria objCategoria = Repositorio.Categoria.Where(x => x.Codigo == 1).FirstOrDefault();
+            /* Edição
+             objCategoria.Descricao = "Bebidas";
+
+            Repositorio.Entry(objCategoria).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            Repositorio.SaveChanges();*/
+
+            Repositorio.Attach(objCategoria);
+            Repositorio.Remove(objCategoria);
+            Repositorio.SaveChanges();
+
+            return View();
         }
 
         public IActionResult Privacy()
