@@ -33,7 +33,7 @@ namespace SistemaVenda
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer("Server=.;Database=Estoque;Trusted_Connection=True;MultipleActiveResultSets=True"));
+            options.UseSqlServer(Configuration.GetConnectionString("MyStock")));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession();
