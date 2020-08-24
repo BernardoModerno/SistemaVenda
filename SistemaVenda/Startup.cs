@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Aplicacao.Servico;
+using Aplicacao.Servico.Interfaces;
+using Dominio.Interfaces;
+using Dominio.Servicos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,6 +41,12 @@ namespace SistemaVenda
 
             services.AddHttpContextAccessor();
             services.AddSession();
+
+            //Serviço Aplicação
+            services.AddScoped<IServicoAplicacaoCategoria, ServicoAplicacaoCategoria>();
+
+            //Dominio
+            services.AddScoped<IServicoCategoria, ServicoCategoria>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
