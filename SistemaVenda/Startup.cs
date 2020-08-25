@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Aplicacao.Servico;
 using Aplicacao.Servico.Interfaces;
 using Dominio.Interfaces;
+using Dominio.Repositorio;
 using Dominio.Servicos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Repositorio.Entidades;
 using SistemaVenda.DAL;
 
 namespace SistemaVenda
@@ -36,7 +38,12 @@ namespace SistemaVenda
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            //fica por enquanto pq o projeto ainda não foi migrado para DDD
             services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("MyStock")));
+
+            //A principio será definitivo
+            services.AddDbContext<Repositorio.Contexto.ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MyStock")));
 
             services.AddHttpContextAccessor();
@@ -47,6 +54,9 @@ namespace SistemaVenda
 
             //Dominio
             services.AddScoped<IServicoCategoria, ServicoCategoria>();
+
+            //Repositorio
+            services.AddScoped<IRepositorioCategoria, RepositorioCategoria>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

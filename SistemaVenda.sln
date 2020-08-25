@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Repositório", "3-Reposit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infraestrutura", "4-Infraestrutura", "{FA054BF1-BBAC-4801-A059-36B1B5F58A3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{22E3E658-490B-47AD-9B19-585AFE29DE4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{22E3E658-490B-47AD-9B19-585AFE29DE4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio", "Repositorio\Repositorio.csproj", "{0A4A53B2-1620-4E2C-AC49-2623CF616565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{22E3E658-490B-47AD-9B19-585AFE29DE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22E3E658-490B-47AD-9B19-585AFE29DE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22E3E658-490B-47AD-9B19-585AFE29DE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A4A53B2-1620-4E2C-AC49-2623CF616565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4A53B2-1620-4E2C-AC49-2623CF616565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4A53B2-1620-4E2C-AC49-2623CF616565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4A53B2-1620-4E2C-AC49-2623CF616565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{448A1EB2-C683-461A-9DBD-338405F51115} = {335A63AF-BF5C-415C-A37F-90CE8EBB4C7F}
 		{22E3E658-490B-47AD-9B19-585AFE29DE4B} = {FAF0D18B-B2B0-4739-ACBE-FE8DB70355FD}
+		{0A4A53B2-1620-4E2C-AC49-2623CF616565} = {55A0ED16-BEFD-42E6-8A56-0989FF705D5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {310D6AEA-A694-4CCB-9F74-BBC81D0E9464}
