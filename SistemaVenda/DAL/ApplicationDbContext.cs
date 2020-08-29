@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Aplicacao.Entidades;
+using Microsoft.EntityFrameworkCore;
 using SistemaVenda.Entidades;
 using System;
 using System.Collections.Generic;
