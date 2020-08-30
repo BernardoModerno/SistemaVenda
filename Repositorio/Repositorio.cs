@@ -12,8 +12,8 @@ namespace Repositorio
     public abstract class Repositorio<TEntidade> : DbContext, IRepositorio<TEntidade>
         where TEntidade : EntityBase, new()
     {
-        DbContext Db;
-        DbSet<TEntidade> DbSetContext;
+        protected DbContext Db; //protected para as classes herdadas herdem as caracteristicas
+        protected DbSet<TEntidade> DbSetContext;
         public Repositorio(DbContext dbContext)
         {
             Db = dbContext;
@@ -46,7 +46,7 @@ namespace Repositorio
             return DbSetContext.Where(x => x.Codigo == id).FirstOrDefault();
         }
 
-        public IEnumerable<TEntidade> Read()
+       public virtual IEnumerable<TEntidade> Read() //virtual permite que a classe pode ser reescrita em um método especifico
         {
             return DbSetContext.AsNoTracking().ToList();
         }
